@@ -1,0 +1,3 @@
+const SEARCH_BY_DATE = "SEARCH_BY_DATE";
+
+export { SEARCH_BY_DATE };
