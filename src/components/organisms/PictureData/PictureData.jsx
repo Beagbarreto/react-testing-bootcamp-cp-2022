@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import moment from 'moment';
 import { LoaderContext } from "../../../utils/providers/loader";
 import { DateSearchContext } from "../../../utils/providers/dateSearchContext";
 import dateSearch from "../../../utils/hooks/dateSearch";
@@ -60,7 +61,7 @@ const PictureData = () => {
         <LeftContainer>
           <SectionTitle>{spaceData.title}</SectionTitle>
           <DateContainer>
-            <DateText>{spaceData.date}</DateText>
+            <DateText>{moment(spaceData.date).format("DD/MM/YYYY")}</DateText>
           </DateContainer>
           <SpaceImage src={spaceData.url} alt={spaceData.title} />
         </LeftContainer>
