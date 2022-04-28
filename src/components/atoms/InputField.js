@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import moment from 'moment';
 import styled from "styled-components";
-import { format } from 'date-fns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDay } from '@fortawesome/free-solid-svg-icons'
-import {currentDate, currentDateSlash} from "../../utils/date";
-// import currentDate from "../../../utils/date";
-// import dateSearch from "../../../utils/services/dateSearch";
-// import PictureData from "../PictureData/PictureData";
+import { DateSearchContext } from "../../utils/providers/dateSearchContext";
 
 export const Form = styled.form`
   display: flex;
@@ -36,38 +32,20 @@ const Input = styled.input`
 `;
 
 const InputField = () => {
-  const [selectedDay, setSelectedDay] = useState(null);
-  const [openCalendar, setOpenCalendar] = useState(false);
-  const [displayDate, setDisplayDate] = useState(null);
-  const [queryDate, setQueryDate] = useState(null);
-  //   const [spaceData, setSpaceData] = useState(null);
-  //   const [queryDate, setQueryDate] = useState(currentDate);
-  //   // const [error, setError] = useState("");
-  //   // const [loading, setLoading] = useState(false);
+  const [ selectedDay, setSelectedDay ] = useState(null);
+  const [ openCalendar, setOpenCalendar ] = useState(false);
+  const [ displayDate, setDisplayDate ] = useState(null);
+  const { queryDate, setQueryDate } = useContext(DateSearchContext);
 
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       console.log("before try");
-  //       try {
-  //         const spaceDataByDate = await dateSearch(queryDate);
-  //         console.log("The request was made");
-  //         setSpaceData(spaceDataByDate.data);
-  //         console.log("The data: ", spaceDataByDate.data);
-  //       } catch {
-  //         alert("No results were found");
-  //       }
-  //     };
-  //     fetchData();
-  //   }, [queryDate]);
-  console.log('SELECTION: ', selectedDay)
   const displayFormat = moment(selectedDay).format("DD/MM/YYYY")
-  const formattedDate = moment(selectedDay).format("DD-MM-YYYY")
+  const formattedDate = moment(selectedDay).format("YYYY-MM-DD")
 
   useEffect(() => {
     const dateIsSelected = () => {
       setOpenCalendar(false);
       setDisplayDate(displayFormat);
-      setQueryDate(formattedDate)
+     setQueryDate(formattedDate)
+      console.log(queryDate)
     }
     dateIsSelected()
   }, [selectedDay])

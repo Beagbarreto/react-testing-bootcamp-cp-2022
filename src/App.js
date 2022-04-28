@@ -1,35 +1,21 @@
 import { AppContainer } from "./App.styles";
+// PROVIDERS
 import LoaderContextProvider from "./utils/providers/loader";
+import SearchContextProvider from "./utils/providers/dateSearchContext";
+// COMPONENTS
 import MainSection from "./components/organisms/MainSection/MainSection";
 
 function App() {
   return (
-    <LoaderContextProvider>
-    <AppContainer>
-      <MainSection />
-    </AppContainer>
-    </LoaderContextProvider>
+    <SearchContextProvider>
+      <LoaderContextProvider>
+      <AppContainer>
+        <MainSection />
+      </AppContainer>
+      </LoaderContextProvider>
+    </SearchContextProvider>
   );
 }
 
 
 export default App;
-
-
-// import { AppContainer } from "./App.styles";
-// import SearchContextProvider from "./providers/dateSearchContext";
-
-// // COMPONENTS
-// import MainSection from "./components/organisms/MainSection/MainSection";
-
-// function App() {
-//   return (
-//     <SearchContextProvider>
-//       <LoaderContextProvider>
-//         <AppContainer>
-//           <MainSection />
-//         </AppContainer>
-//       </LoaderContextProvider>
-//     </SearchContextProvider>
-//   );
-// }

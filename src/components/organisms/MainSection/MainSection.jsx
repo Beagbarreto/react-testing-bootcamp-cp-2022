@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from "react";
-import {currentDate} from "../../../utils/date";
-//import dateSearch from "../../../utils/services/dateSearchService";
-import dateSearch from "../../../utils/hooks/dateSearch";
+import React from "react";
 // COMPONENTS
 import PictureData from "../PictureData/PictureData";
 // UI
@@ -17,25 +14,6 @@ import {
 import NasaLogo from "../../../assets/NasaLogo.png";
 
 const MainSection = () => {
-  const [spaceData, setSpaceData] = useState(null);
-  const [queryDate, setQueryDate] = useState(currentDate);
-  // const [error, setError] = useState("");
-  // const [loading, setLoading] = useState(false);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     console.log("before try");
-  //     try {
-  //       const spaceDataByDate = await dateSearch(queryDate);
-  //       console.log("The request was made");
-  //       setSpaceData(spaceDataByDate.data);
-  //       console.log("The data: ", spaceDataByDate.data);
-  //     } catch {
-  //       alert("No results were found");
-  //     }
-  //   };
-  //   fetchData();
-  // }, [queryDate]);
 
   return (
     <MainSectionCont>

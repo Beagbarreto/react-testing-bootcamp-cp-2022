@@ -1,10 +1,16 @@
 import styled from "styled-components";
 import BREAKPOINTS from "../../../utils/breakpoints";
 
-export const MainContainer = styled.article`
+export const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const InnerContainer = styled.article`
   display: flex;
   flex-direction: row;
-  align-content: flex-start;
   padding-top: 
   width: 100%;
   margin-right: 130px;
@@ -48,4 +54,8 @@ export const DateContainer = styled.p`
 
 export const DateText = styled.p`
   color: #105bd8;
+`;
+
+export const InputContainer = styled.div`
+  margin-bottom: 20px;
 `;
