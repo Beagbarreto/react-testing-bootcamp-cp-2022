@@ -26,14 +26,21 @@ const PictureData = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      showLoader();
+      //showLoader();
       try{
         const response = await dateSearch(queryDate);
         setSpaceData(response.data)
         console.log('data: ', response.data);
-      } catch (err) {
-        //alert('No results were found')
-        setError(err.msg ? err.msg : err.message);
+        hideLoader()
+      } catch (error) {
+        if (error.response) {
+          const dateError = error.response.data.msg ? error.response.data.msg : error.response.data.message;
+          console.log('First', error.response.data);
+          setError(dateError)
+        } else {
+          setError('There was an error, please try again.')
+        }
+        console.log('Error: ', error)
         setErrorModal(true);
       }
       hideLoader();
@@ -46,9 +53,9 @@ const PictureData = () => {
 
   return (
     <MainContainer>
-      <InnerContainer>
+      <InputContainer>
         <InputField />
-      </InnerContainer>
+      </InputContainer>
       <InnerContainer>
         <LeftContainer>
           <SectionTitle>{spaceData.title}</SectionTitle>

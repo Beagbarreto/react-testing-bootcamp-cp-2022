@@ -33,8 +33,8 @@ const ModalContainer = styled.div`
   position: "absolute";
   top: 0px;
   left: 0px;
-  width: 20%;
-  height: 20%;
+  width: 290px;
+  height: 155px;
   background-color: "rgba(0, 0, 0, 0.5)";
   justify-content: center;
   align-items: center;
@@ -43,7 +43,7 @@ const ModalContainer = styled.div`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: 80px;
+  margin-top: 30px;
 `;
 
 const Button = styled.button`
