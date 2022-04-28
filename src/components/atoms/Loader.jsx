@@ -1,9 +1,11 @@
-import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 // ASSETS
-//import loader from "../../assets/images/loader.gif";
-// UI
-import { Image } from "../atoms";
+import PlanetLoader from "../../assets/PlanetLoader.gif";
+
+const Image = styled.img`
+  height: "auto";
+  width: "auto";
+`;
 
 const LoaderContainer = styled.div`
   position: fixed;
@@ -19,15 +21,15 @@ const LoaderContainer = styled.div`
 
   img {
     align-self: center;
+    border-radius: 15px;
+    overflow: hidden;
   }
 `;
 
 const Loader = () => {
-  const { t } = useTranslation();
-
   return (
     <LoaderContainer>
-      <Image src={loader} alt={t("loader")} />
+      <Image src={PlanetLoader} alt="planet loader" />
     </LoaderContainer>
   );
 };

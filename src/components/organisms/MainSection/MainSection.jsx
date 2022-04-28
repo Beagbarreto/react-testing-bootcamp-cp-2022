@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-import currentDate from "../../../utils/date";
-import dateSearchServices from "../../../utils/services/dateSearchServices";
-import InputField from "../../atoms/InputField";
-import PictureData from "../PictureData/PictureData";
+import {currentDate} from "../../../utils/date";
 //import dateSearch from "../../../utils/services/dateSearchService";
+import dateSearch from "../../../utils/hooks/dateSearch";
+// COMPONENTS
+import PictureData from "../PictureData/PictureData";
+// UI
 import {
   Footer,
   FooterText,
   Header,
+  Logo,
   MainSectionCont,
   Title,
 } from "./MainSection.styles";
+// ASSETS
+import NasaLogo from "../../../assets/NasaLogo.png";
 
 const MainSection = () => {
   const [spaceData, setSpaceData] = useState(null);
@@ -18,30 +22,27 @@ const MainSection = () => {
   // const [error, setError] = useState("");
   // const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      console.log("before try");
-      try {
-        const spaceDataByDate = await dateSearchServices(queryDate);
-        console.log("The request was made");
-        setSpaceData(spaceDataByDate.data);
-        console.log("The data: ", spaceDataByDate.data);
-      } catch {
-        alert("No results were found");
-      }
-    };
-    fetchData();
-  }, [queryDate]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     console.log("before try");
+  //     try {
+  //       const spaceDataByDate = await dateSearch(queryDate);
+  //       console.log("The request was made");
+  //       setSpaceData(spaceDataByDate.data);
+  //       console.log("The data: ", spaceDataByDate.data);
+  //     } catch {
+  //       alert("No results were found");
+  //     }
+  //   };
+  //   fetchData();
+  // }, [queryDate]);
 
   return (
     <MainSectionCont>
       <Header>
-        {/* <img src={logo} alt="logo" /> */}
+        <Logo src={NasaLogo} alt="nasa logo" />
         <Title>Len's Daily Space Report</Title>
       </Header>
-      <div>
-        <InputField />
-      </div>
       <PictureData />
       <Footer>
         <FooterText>

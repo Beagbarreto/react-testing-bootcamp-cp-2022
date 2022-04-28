@@ -7,5 +7,6 @@ if (dd < 10) dd = "0" + dd;
 if (mm < 10) mm = "0" + mm;
 
 const currentDate = yyyy + "-" + mm + "-" + dd;
+const currentDateSlash = yyyy + "/" + mm + "/" + dd;
 
-export default currentDate;
+export {currentDate, currentDateSlash};

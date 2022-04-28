@@ -4,7 +4,11 @@ import BREAKPOINTS from "../../../utils/breakpoints";
 export const MainContainer = styled.article`
   display: flex;
   flex-direction: row;
+  align-content: flex-start;
+  padding-top: 
   width: 100%;
+  margin-right: 130px;
+  margin-left: 130px;
 `;
 
 export const SectionTitle = styled.h2`
@@ -14,6 +18,9 @@ export const SectionTitle = styled.h2`
 
 export const SpaceImage = styled.img`
   width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
 `;
 
 export const LeftContainer = styled.div`
@@ -22,7 +29,6 @@ export const LeftContainer = styled.div`
   align-self: flex-end;
   width: 50%;
   margin-right: 90px;
-  margin-left: 90px;
 `;
 
 export const RightContainer = styled.div`
@@ -30,17 +36,16 @@ export const RightContainer = styled.div`
   flex-direction: column;
   align-self: flex-start;
   width: 50%;
-  margin-right: 90px;
   margin-top: 98px;
 `;
 
 export const DateContainer = styled.p`
   align-self: flex-end;
   justify-content: flex-end;
-  margin-top: -15px;
-  margin-bottom: -12px;
+  margin-top: -12px;
+  margin-bottom: -5px;
 `;
 
 export const DateText = styled.p`
-  color: red;
+  color: #105bd8;
 `;

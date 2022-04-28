@@ -20,14 +20,22 @@ export const Header = styled.div`
   display: flex;
   /* flex-direction: column; */
   width: 100%;
+  height: 130px;
+  padding-top: 10px;
   align-items: center;
-  justify-content: center;
-  background-color: black;
+  background-color: #0a0a0a;
 `;
 
 export const Title = styled.h1`
   //font-family: roboto;
+  text-align: center;
   color: white;
+`;
+
+export const Logo = styled.img`
+  height: 80px;
+  width: 95px;
+  padding: 115px;
 `;
 
 export const Footer = styled.div`
@@ -37,7 +45,7 @@ export const Footer = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: gray;
+  background-color: #105bd8;
   height: 60px;
   //background:#6cf; */
 `;
