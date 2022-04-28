@@ -27,12 +27,11 @@ const PictureData = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      //showLoader();
+      showLoader();
       try{
         const response = await dateSearch(queryDate);
         setSpaceData(response.data)
         console.log('data: ', response.data);
-        hideLoader()
       } catch (error) {
         if (error.response) {
           const dateError = error.response.data.msg ? error.response.data.msg : error.response.data.message;
@@ -63,7 +62,7 @@ const PictureData = () => {
           <DateContainer>
             <DateText>{moment(spaceData.date).format("DD/MM/YYYY")}</DateText>
           </DateContainer>
-          <SpaceImage src={spaceData.url} alt={spaceData.title} />
+          <SpaceImage src={spaceData.url} alt={'space image of the day'} />
         </LeftContainer>
         <RightContainer>
           <p>{spaceData.explanation}</p>
